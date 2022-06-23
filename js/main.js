@@ -4,12 +4,12 @@
 // Ci saranno quindi 10 caselle per ognuna delle 10 righe.
 // Quando l'utente clicca su ogni cella, la cella cliccata si colora di azzurro ed emetto un messaggio 
 // in console con il numero della cella cliccata.
+
 // Bonus
 // Aggiungere una select accanto al bottone di generazione, che fornisca una scelta tra tre diversi livelli di difficoltà:
 // con difficoltà 1 => 100 caselle, con un numero compreso tra 1 e 100, divise in 10 caselle per 10 righe;
 // con difficoltà 2 => 81 caselle, con un numero compreso tra 1 e 81, divise in 9 caselle per 9 righe;
 // con difficoltà 3 => 49 caselle, con un numero compreso tra 1 e 49, divise in 7 caselle per 7 righe;
-
 
 // * Salvo il bottone in variabile
     // ? lavorando sul click, allora tutto si svilupperà nel bottone, tranne le funzioni da richiamare
@@ -17,13 +17,32 @@ const playButton = document.getElementById('start_btn');
 
 playButton.addEventListener('click', function(){  // TODO Lo useremo alla fine per avere tutto all'avvio del documento per ora!
 
+
+// ! Bonus
+// * Creo un value selector su html con le varie difficoltà
+// * recupero il value attributo al selettore su js, come lo modifico?
+let difficultySelector = document.getElementById('difficulty_selector');
+    // ? assegno a difficulty selector il value assegnato
+    difficultySelector = parseInt(difficultySelector.value);
+    // console.log(difficultySelector);
+    // ? in base al value, cambio con un if i valori al for
+    if(difficultySelector === 1){
+        difficultySelector = 100;
+        console.log(difficultySelector);
+    }
+    // ? creo delle nuove classi box da assegnare con le varie differenze
+
+
+
+
+
 // Richiamo il wrapper per poter inserir le cose dentro successivamente in modo più comodo
 const gameWrapper = document.querySelector('.grid_wrapper');
 gameWrapper.innerHTML = '';
 
 // * creo le 100 caselle dinamicamente su js:
     //  ? creo un for per stampare le 100 caselle
-for (let i = 0; i < 100; i++) {
+for (let i = 0; i < difficultySelector; i++) {
 
     let gameGenerator = boxesGenerator('box', 'borders');
     // serve a far visualizzare da 1 a 100 sulla grigilia
@@ -49,7 +68,7 @@ function activateBoxes(elementPressed, effectToActivate){
     
     elementPressed.addEventListener('click', function(){
         elementPressed.classList.add(effectToActivate);
-        
+
          // ? al click, mi darà anche il log con il numero della casella cliccata
         console.log(elementPressed.innerHTML);
     })

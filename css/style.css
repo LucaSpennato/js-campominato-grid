@@ -11,7 +11,7 @@ body{
 header{
     padding: 1rem;
     display: flex;
-    justify-content: center;
+    justify-content: space-around;
 }
 
 

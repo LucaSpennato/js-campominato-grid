@@ -9,3 +9,16 @@
 // con difficoltà 1 => 100 caselle, con un numero compreso tra 1 e 100, divise in 10 caselle per 10 righe;
 // con difficoltà 2 => 81 caselle, con un numero compreso tra 1 e 81, divise in 9 caselle per 9 righe;
 // con difficoltà 3 => 49 caselle, con un numero compreso tra 1 e 49, divise in 7 caselle per 7 righe;
+
+
+// * Salvo il bottone in variabile
+    // ? lavorando sul click, allora tutto si svilupperà nel bottone, tranne le funzioni da richiamare
+
+// * creo le 100 caselle dinamicamente su js:
+    // ? creo un for per stampare le 100 caselle
+    // ? la modulazione delle 100 caselle la assegnerò ad una funzione richiamandola poi nel for
+
+// * Devo far attivare le caselle al click e cambia colore al click
+    // ?  creo una classe 'attivo' su css (già creata)
+    // ? creo una funzione che mi permetta al click, di cambiare la classe su js 
+    // ? al click, mi darà anche il log con il numero della casella cliccata

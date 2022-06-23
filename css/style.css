@@ -3,19 +3,31 @@
     padding: 0;
     box-sizing: border-box;
 }
+
+body{
+    background-color: rgb(0, 0, 81);
+}
+
+header{
+    padding: 1rem;
+    display: flex;
+    justify-content: center;
+}
+
+
 .borders{
     border: 2px solid whitesmoke;
 }
 .container_lg{
-    width: 100vw;
-    height: 100vh;
-    background-color: darkblue;
-    padding: 3.5rem;
+    display: flex;
+    align-items: center;
+    width: 100%;
+    height: 90vh;
 }
 
 .grid_wrapper{
-    width: 600px;
-    height: 600px;
+    width: 550px;
+    height: 550px;
     margin: 0 auto;
     display: flex;
     flex-wrap: wrap;
@@ -24,4 +36,8 @@
 .box{
     display: flex;
     flex-basis: calc(100% / 10);
+}
+
+.active{
+    background-color: cyan;
 }

@@ -49,8 +49,11 @@ playButton.addEventListener('click', function () {  // TODO Lo useremo alla fine
         gameWrapper.append(gameGenerator);
 
         activateBoxes(gameGenerator, 'active');
+        innerHtmlOnClick(gameGenerator);
     }
 })
+
+
 
 // ? la modulazione delle 100 caselle la assegnerò ad una funzione richiamandola poi nel for
 function boxesGenerator(classToAdd, classToAddTwo) {
@@ -66,11 +69,15 @@ function activateBoxes(elementPressed, effectToActivate) {
 
     elementPressed.addEventListener('click', function () {
         elementPressed.classList.add(effectToActivate);
-
-        // ? al click, mi darà anche il log con il numero della casella cliccata
-        console.log(elementPressed.innerHTML);
     })
 
+}
+
+function innerHtmlOnClick (element){
+    // ? al click, mi darà anche il log con il numero della casella cliccata
+    element.addEventListener('click', function(){
+        console.log(element.innerHTML);
+    })
 }
 
 

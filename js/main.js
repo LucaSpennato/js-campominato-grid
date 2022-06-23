@@ -15,7 +15,7 @@
     // ? lavorando sul click, allora tutto si svilupperà nel bottone, tranne le funzioni da richiamare
 const playButton = document.getElementById('start_btn');
 
-//playButton.addEventListener('click', function(){ }) // TODO Lo useremo alla fine per avere tuto all'avvio del documento per ora!
+playButton.addEventListener('click', function(){  // TODO Lo useremo alla fine per avere tuto all'avvio del documento per ora!
 
 // Richiamo il wrapper per poter inserir le cose dentro successivamente in modo più comodo
 const gameWrapper = document.querySelector('.grid_wrapper');
@@ -24,15 +24,18 @@ gameWrapper.innerHTML = '';
 // * creo le 100 caselle dinamicamente su js:
     //  ? creo un for per stampare le 100 caselle
     
+   
 for (let i = 0; i < 100; i++) {
 
     let gameGenerator = boxesGenerator('box', 'borders');
-    gameGenerator.innerHTML = i;
+    gameGenerator.innerHTML = i +1;
     gameWrapper.append(gameGenerator);
 
     activateBoxes(gameGenerator, 'active');
-
+    
 }
+
+})
 
 // ? la modulazione delle 100 caselle la assegnerò ad una funzione richiamandola poi nel for
 function boxesGenerator(classToAdd, classToAddTwo){
@@ -50,6 +53,7 @@ function activateBoxes(elementPressed, effectToActivate){
     
     elementPressed.addEventListener('click', function(){
         elementPressed.classList.add(effectToActivate);
+        console.log(elementPressed.innerHTML)
     })
 
 }

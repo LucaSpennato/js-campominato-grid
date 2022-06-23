@@ -15,7 +15,7 @@
     // ? lavorando sul click, allora tutto si svilupperà nel bottone, tranne le funzioni da richiamare
 const playButton = document.getElementById('start_btn');
 
-playButton.addEventListener('click', function(){  // TODO Lo useremo alla fine per avere tuto all'avvio del documento per ora!
+playButton.addEventListener('click', function(){  // TODO Lo useremo alla fine per avere tutto all'avvio del documento per ora!
 
 // Richiamo il wrapper per poter inserir le cose dentro successivamente in modo più comodo
 const gameWrapper = document.querySelector('.grid_wrapper');
@@ -23,16 +23,14 @@ gameWrapper.innerHTML = '';
 
 // * creo le 100 caselle dinamicamente su js:
     //  ? creo un for per stampare le 100 caselle
-    
-   
 for (let i = 0; i < 100; i++) {
 
     let gameGenerator = boxesGenerator('box', 'borders');
+    // serve a far visualizzare da 1 a 100 sulla grigilia
     gameGenerator.innerHTML = i +1;
     gameWrapper.append(gameGenerator);
 
     activateBoxes(gameGenerator, 'active');
-    
 }
 
 })
@@ -47,13 +45,13 @@ function boxesGenerator(classToAdd, classToAddTwo){
 // * Devo far attivare le caselle al click e cambia colore al click
     // ?  creo una classe 'attivo' su css (già creata)
     // ? creo una funzione che mi permetta al click, di cambiare la classe su js 
-    // ? al click, mi darà anche il log con il numero della casella cliccata
-
 function activateBoxes(elementPressed, effectToActivate){
     
     elementPressed.addEventListener('click', function(){
         elementPressed.classList.add(effectToActivate);
-        console.log(elementPressed.innerHTML)
+        
+         // ? al click, mi darà anche il log con il numero della casella cliccata
+        console.log(elementPressed.innerHTML);
     })
 
 }

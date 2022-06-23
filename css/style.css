@@ -9,9 +9,9 @@ body{
 }
 
 header{
-    padding: 1rem;
+    padding: .8rem;
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
 }
 
 
@@ -33,12 +33,28 @@ header{
     flex-wrap: wrap;
 }
 
-.box{
+.box_easy{
     display: flex;
     color: white;
     align-items: center;
     justify-content: center;
     flex-basis: calc(100% / 10);
+}
+
+.box_medium{
+    display: flex;
+    color: white;
+    align-items: center;
+    justify-content: center;
+    flex-basis: calc(100% / 9);
+}
+
+.box_difficult{
+    display: flex;
+    color: white;
+    align-items: center;
+    justify-content: center;
+    flex-basis: calc(100% / 7);
 }
 
 .active{

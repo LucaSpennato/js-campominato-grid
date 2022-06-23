@@ -21,39 +21,39 @@ playButton.addEventListener('click', function(){  // TODO Lo useremo alla fine p
 const gameWrapper = document.querySelector('.grid_wrapper');
 gameWrapper.innerHTML = '';
 
-
 // ! Bonus
 // * Creo un value selector su html con le varie difficoltà
 // * recupero il value attributo al selettore su js, come lo modifico?
 let difficultySelector = document.getElementById('difficulty_selector');
     // ? assegno a difficulty selector il value assegnato
     difficultySelector = parseInt(difficultySelector.value);
+    let diffForIteration = difficultySelector;
+    let diffClassChange = difficultySelector;
     // console.log(difficultySelector);
     // ? in base al value, cambio con un if i valori al for
     if(difficultySelector === 1){
-        difficultySelector = 100;
-        console.log(difficultySelector);
+        diffForIteration = 100;
+        diffClassChange = 'box_easy';
     } else if (difficultySelector === 2){
-        difficultySelector = 81;
+        diffForIteration = 81;
+        diffClassChange = 'box_medium';
     } else if (difficultySelector === 3){
-        difficultySelector = 49;
+        diffForIteration = 49;
+        diffClassChange = 'box_difficult';
     } else {
-        difficultySelector = 0;
+        diffForIteration = 0;
         gameWrapper.innerHTML = '<div class="first_screen fs-1 text-light">Scegli prima una difficoltà!</div>';
     }
     // ? creo delle nuove classi box da assegnare con le varie differenze
-
-
-
-
+    // TODO metter tutto in una o più funzioni! function difficultyIteration (){}
 
 
 
 // * creo le 100 caselle dinamicamente su js:
     //  ? creo un for per stampare le 100 caselle
-for (let i = 0; i < difficultySelector; i++) {
+for (let i = 0; i < diffForIteration; i++) {
 
-    let gameGenerator = boxesGenerator('box', 'borders');
+    let gameGenerator = boxesGenerator(diffClassChange, 'borders');
     // serve a far visualizzare da 1 a 100 sulla grigilia
     gameGenerator.innerHTML = i +1;
     gameWrapper.append(gameGenerator);

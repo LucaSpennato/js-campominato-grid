@@ -1,0 +1,27 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.borders{
+    border: 2px solid whitesmoke;
+}
+.container_lg{
+    width: 100vw;
+    height: 100vh;
+    background-color: darkblue;
+    padding: 3.5rem;
+}
+
+.grid_wrapper{
+    width: 600px;
+    height: 600px;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.box{
+    display: flex;
+    flex-basis: calc(100% / 10);
+}

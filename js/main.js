@@ -17,6 +17,10 @@ const playButton = document.getElementById('start_btn');
 
 playButton.addEventListener('click', function(){  // TODO Lo useremo alla fine per avere tutto all'avvio del documento per ora!
 
+// Richiamo il wrapper per poter inserir le cose dentro successivamente in modo più comodo
+const gameWrapper = document.querySelector('.grid_wrapper');
+gameWrapper.innerHTML = '';
+
 
 // ! Bonus
 // * Creo un value selector su html con le varie difficoltà
@@ -29,6 +33,13 @@ let difficultySelector = document.getElementById('difficulty_selector');
     if(difficultySelector === 1){
         difficultySelector = 100;
         console.log(difficultySelector);
+    } else if (difficultySelector === 2){
+        difficultySelector = 81;
+    } else if (difficultySelector === 3){
+        difficultySelector = 49;
+    } else {
+        difficultySelector = 0;
+        gameWrapper.innerHTML = '<div class="first_screen fs-1 text-light">Scegli prima una difficoltà!</div>';
     }
     // ? creo delle nuove classi box da assegnare con le varie differenze
 
@@ -36,9 +47,7 @@ let difficultySelector = document.getElementById('difficulty_selector');
 
 
 
-// Richiamo il wrapper per poter inserir le cose dentro successivamente in modo più comodo
-const gameWrapper = document.querySelector('.grid_wrapper');
-gameWrapper.innerHTML = '';
+
 
 // * creo le 100 caselle dinamicamente su js:
     //  ? creo un for per stampare le 100 caselle

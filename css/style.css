@@ -35,6 +35,9 @@ header{
 
 .box{
     display: flex;
+    color: white;
+    align-items: center;
+    justify-content: center;
     flex-basis: calc(100% / 10);
 }
 

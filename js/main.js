@@ -23,25 +23,33 @@ gameWrapper.innerHTML = '';
 
 // * creo le 100 caselle dinamicamente su js:
     //  ? creo un for per stampare le 100 caselle
-    // ? la modulazione delle 100 caselle la assegnerò ad una funzione richiamandola poi nel for
+    
 for (let i = 0; i < 100; i++) {
 
     let gameGenerator = boxesGenerator('box', 'borders');
+    gameGenerator.innerHTML = i;
     gameWrapper.append(gameGenerator);
-    
+
+    activateBoxes(gameGenerator, 'active');
+
 }
 
-
-
+// ? la modulazione delle 100 caselle la assegnerò ad una funzione richiamandola poi nel for
+function boxesGenerator(classToAdd, classToAddTwo){
+    let box = document.createElement('div');
+    box.classList.add(classToAdd, classToAddTwo);
+    return box;
+}
 
 // * Devo far attivare le caselle al click e cambia colore al click
     // ?  creo una classe 'attivo' su css (già creata)
     // ? creo una funzione che mi permetta al click, di cambiare la classe su js 
     // ? al click, mi darà anche il log con il numero della casella cliccata
 
+function activateBoxes(elementPressed, effectToActivate){
+    
+    elementPressed.addEventListener('click', function(){
+        elementPressed.classList.add(effectToActivate);
+    })
 
-function boxesGenerator(classToAdd, classToAddTwo, classToAddThree){
-    let box = document.createElement('div');
-    box.classList.add(classToAdd, classToAddTwo, classToAddThree);
-    return box;
 }
